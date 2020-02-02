@@ -83,7 +83,7 @@ button:hover {
 	background: #888;
 }
 
-code { font-size: 0.8em; display: inline; }
+code { font-size: 3.8em; display: inline; }
 
 .disable {
 	position: fixed;
@@ -107,22 +107,13 @@ code { font-size: 0.8em; display: inline; }
 	<p><b>Halmstads konsthall</b></p>
 	<p>2020-04-01 - foreva</p>
 
-	<pre><code>
-$(<span class="code-string">'body'</span>).ripples(<span class="code-cbracket">{</span>
-	resolution: <span class="code-number">512</span>,
-	dropRadius: <span class="code-number">20</span>,
-	perturbance: <span class="code-number">0.04</span>,
-<span class="code-cbracket">}</span>);
-	</code></pre>
+	
 
-	<p>You can add drops programmatically by doing <code>$(<span class="code-string">'body'</span>).ripples(<span class="code-string">"drop"</span>, x, y, radius, strength)</code></p>
-
-	<p>And you can change its state:<br>
-	<button class="js-ripples-pause" type="button">
+	<button class="js-ripples-pause" type="button" onclick="document.getElementById('player').pause()">
 		<code>$(<span class="code-string">'body'</span>).ripples(<span class="code-string">"pause"</span>)</code>
 	</button>
 
-	<button class="js-ripples-play" type="button">
+	<button class="js-ripples-play" type="button" onclick="document.getElementById('player').play()">
 		<code>$(<span class="code-string">'body'</span>).ripples(<span class="code-string">"play"</span>)</code>
 	</button>
 	</p>
@@ -151,7 +142,7 @@ $(document).ready(function() {
 			resolution: 128,
 			dropRadius: 10, //px
 			perturbance: 0.04,
-			interactive: false
+			interactive: true
 		});
 	}
 	catch (e) {
@@ -183,5 +174,13 @@ $(document).ready(function() {
 	}, 400);
 });
 </script>
+
+<audio id="player" src="water.mp3"></audio>
+<div> 
+  <button onclick="document.getElementById('player').play()">Play</button> 
+  <button onclick="document.getElementById('player').pause()">Pause</button> 
+  <button onclick="document.getElementById('player').volume += 0.1">Vol+ </button> 
+  <button onclick="document.getElementById('player').volume -= 0.1">Vol- </button> 
+</div>
 </body>
 </html>
