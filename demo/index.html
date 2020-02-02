@@ -108,21 +108,23 @@ code { font-size: 3.8em; display: inline; }
 	<p>2020-04-01 - foreva</p>
 
 	
-	<button class="js-ripples-play" type="button" onclick="document.getElementById('player').play()">
-		<code><span class="code-string">play</span></code>
-	</button>
 
 	<button class="js-ripples-pause" type="button" onclick="document.getElementById('player').pause()">
-		<code><span class="code-string">pause</span></code>
+		<code>$(<span class="code-string">'body'</span>).ripples(<span class="code-string">"pause"</span>)</code>
 	</button>
 
-	
+	<button class="js-ripples-play" type="button" onclick="document.getElementById('player').play()">
+		<code>$(<span class="code-string">'body'</span>).ripples(<span class="code-string">"play"</span>)</code>
+	</button>
 	</p>
 
 	
 </main>
 
-
+<button class="js-ripples-disable disable">
+	Click here if your PC can't handle this effect very well
+	(<code>$(<span class="code-string">'body'</span>).ripples(<span class="code-string">"destroy"</span>)</code>)
+</button>
 
 <div class="error"></div>
 
