@@ -131,17 +131,7 @@ code { font-size: 3.8em; display: inline; }
 <script>
 $(document).ready(function() {
 	try {
-		$('body').ripples({
-			resolution: 512,
-			dropRadius: 20, //px
-			perturbance: 0.04,
-		});
-		$('main').ripples({
-			resolution: 128,
-			dropRadius: 10, //px
-			perturbance: 0.04,
-			interactive: true
-		});
+	
 	}
 	catch (e) {
 		$('.error').show().text(e);
@@ -153,6 +143,17 @@ $(document).ready(function() {
 	});
 
 	$('.js-ripples-play').on('click', function() {
+			$('body').ripples({
+			resolution: 512,
+			dropRadius: 20, //px
+			perturbance: 0.04,
+		});
+		$('main').ripples({
+			resolution: 128,
+			dropRadius: 10, //px
+			perturbance: 0.04,
+			interactive: true
+		});
 		$('body, main').ripples('play');
 	});
 
